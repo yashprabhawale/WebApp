@@ -39,7 +39,7 @@ public class SecurityConfig {
 				requestMatchers("/registration","/css/**").permitAll()
 				.anyRequest().authenticated())
 		
-		.formLogin(form -> form.loginPage("/,login").loginProcessingUrl("/login")
+		.formLogin(form -> form.loginPage("/login").loginProcessingUrl("/login")
 				.successHandler(customSuccessHandler).permitAll())
 		
 		.logout(form -> form.invalidateHttpSession(true).clearAuthentication(true)
